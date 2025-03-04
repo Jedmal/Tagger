@@ -6,7 +6,7 @@ import os
 
 # Load Stanza Polish model
 stanza.download("pl")
-nlp = stanza.Pipeline(lang="pl", processors="tokenize,mwt,pos,lemma")
+nlp = stanza.Pipeline(lang="pl", processors="tokenize,lemma", use_gpu=False)
 
 # Load tag list from CSV
 file_path = os.path.join(os.getcwd(), "TagListPL.csv")
