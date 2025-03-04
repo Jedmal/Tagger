@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polish Text Tagger</title>
+</head>
+<body>
+    <h1>Polish Text Tagger</h1>
+    <form method="post">
+        <textarea name="text" rows="5" cols="40">{{ text }}</textarea>
+        <br>
+        <input type="submit" value="Tag Words">
+    </form>
+
+    {% if result %}
+    <h2>Results</h2>
+    <ul>
+        {% for word, tag in result %}
+        <li><b>{{ word }}</b>: {{ tag }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>
